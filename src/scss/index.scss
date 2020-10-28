@@ -1,0 +1,44 @@
+// Mixins
+@import "mixins.scss";
+// Mixins
+
+//Fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+//default fonts
+$font-family: "Roboto", sans-serif;
+
+//Variables
+$min-width: 320px;
+
+// Reset , default params
+@import "startparams.scss";
+
+body {
+    
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.ibg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    img {
+        display: none;
+    }
+}
+//for parallax effect
+.ibg_p {
+    background-attachment: fixed;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+
+
