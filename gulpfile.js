@@ -13,9 +13,9 @@ const path = {
   },
 
   src: {
-    html: [`${source_folder}/*.html`, `${!source_folder} __*.html`],
+    html: [`${source_folder}/*.html`, `${!source_folder} _*.html`],
     css: `${source_folder}/scss/index.scss`,
-    js: `${source_folder}/js/script.js`,
+    js: `${source_folder}/js/index.js`,
     img: `${source_folder}/img/**/*`,
     fonts: `${source_folder}/fonts/**/*`,
   },
@@ -136,12 +136,13 @@ function js() {
         errorHandeler: onError,
       })
     )
-    .pipe(concat('script.js'))
+    .pipe(concat('index.js'))
     .pipe(
       webpackStream({
         output: {
-          filename: 'script.js',
+          filename: 'index.js',
         },
+        mode: 'none',
         module: {
           rules: [
             {
@@ -166,11 +167,11 @@ function js() {
 function minifyJs() {
   return src(path.src.js)
     .pipe(plumber())
-    .pipe(concat('script.js'))
+    .pipe(concat('index.js'))
     .pipe(
       webpackStream({
         output: {
-          filename: 'script.js',
+          filename: 'index.js',
         },
         mode: 'none',
         module: {
@@ -290,9 +291,9 @@ function clean() {
 
 /* ------------------- WATCH ------------------ */
 function watchFiles() {
-  gulp.watch([path.watch.html], html);
-  gulp.watch([path.watch.css], minifyCss);
-  gulp.watch([path.watch.js], minifyJs);
+  gulp.watch(path.watch.html, html);
+  gulp.watch(path.watch.css, minifyCss);
+  gulp.watch(path.watch.js, minifyJs);
 }
 
 // for employer
