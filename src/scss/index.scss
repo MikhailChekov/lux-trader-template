@@ -8,12 +8,13 @@
 $font-family: "PT Sans";
 
 //Variables
-$minwidth: 320px;
-$mw: 1240;
-$md1: $mw + 60;
-$md2: 992;
-$md3: 767;
-$md4: 0;
+$min-width: 320px;
+
+$mw: 970px;
+$md1: $mw + 12px;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
 
 // Reset , default params
 @import "reset.scss";
@@ -35,20 +36,18 @@ body {
 }
 
 .container {
-	max-width: $mw + px;
-	margin: 0 auto;
-	width: 100%;
-	@media (max-width: $md1+px) {
-		max-width: 970px;
-	}
-	@media (max-width: $md2+px) {
-		max-width: 750px;
-	}
-	@media (max-width: $md3+px) {
-		max-width: none;
-		padding: 0 10px;
-	}
+    max-width: $mw;
+    margin: 0 auto;
+    padding: 0 10px;
 }
+
+/**
+    ------------------ include Sections ------------------------/
+*/
+@import "header";
+
+
+/*-------------------- include Sections ------------------------*/
 
 img {
     width: 100%;
