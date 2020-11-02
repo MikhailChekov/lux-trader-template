@@ -35,19 +35,24 @@ body {
     }
 }
 
+//TODO: check for needs flex to .page
+//main.page
+.page {
+    // flex: 1 1 auto;
+}
+
+//use for limit content
 .container {
     max-width: $mw;
     margin: 0 auto;
     padding: 0 10px;
 }
 
-/**
-    ------------------ include Sections ------------------------/
-*/
-@import "header";
+/*-------------------- include Sections ----------------------*/
+@import 'header.scss';
+@import 'mainSlider.scss';
 
-
-/*-------------------- include Sections ------------------------*/
+/*-------------------- Common blocks ------------------------*/
 
 img {
     width: 100%;
@@ -68,5 +73,107 @@ img {
 }
 
 .btn {
-    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    color: #fff;
+    font-family: "Idealist Sans";
+    font-size: 15px;
+    line-height: 21px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    &:before,
+    &:after {
+        content:'';
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        left: 0;
+    }
+    &:before {
+        top: 0;
+        background-color: #c3a775;
+    }
+    &:after {
+        bottom: 0;
+        background-color: #8f6630;
+    }
+    // .btn__body
+    &__body {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+
+        &:before,
+        &:after {
+            content:'';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background-image: linear-gradient(to top, #8f6630, #c3a775);
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+
+        span {
+            position: relative;
+            display: block;
+            padding: 0 50px;
+            &:before,
+            &:after {
+                content:'';
+                position: absolute;
+                width: 100%;
+                height: 50%;
+                top: 0;
+                left: 0;
+                background-image: linear-gradient(to top, #bb9c66 0%, rgba(187, 156, 102, 0) 100%);
+                opacity: 0.06;
+            }
+        }
+    }
+    @media (min-width: 992px) {
+        &:hover {
+        }
+    }
+}
+
+
+.title {
+    text-align: center;
+    // .title__start
+    &__start {
+        color: #bb9c66;
+        font-family: "Ceremonious One";
+        font-size: 40px;
+        font-weight: normal;
+        line-height: 25px;
+        margin: 0px 0px 23px 0px;
+    }
+
+    // .title__main
+    &__main {
+        color: #111;
+        font-family: "PF Din Text Cond Pro";
+        font-size: 35px;
+        font-weight: 500;
+        line-height: 35px;
+        text-transform: uppercase;
+        letter-spacing: 5.25px;
+        &_white {
+            color: #fff;
+        }
+        &_fw_normal {
+            font-weight: normal;
+        }
+    }
+
 }

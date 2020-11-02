@@ -42,7 +42,10 @@ const { src, dest } = require('gulp'),
   uglify = require('gulp-uglify-es').default,
   fs = require('fs'),
   babel = require('gulp-babel'),
+  //old image plugin
   imagemin = require('gulp-imagemin'),
+  //new
+  image = require('gulp-image');
   browsersync = require('browser-sync').create(),
   del = require('del'),
   //push media-queries to bottom
@@ -198,8 +201,25 @@ function minifyJs() {
 }
 
 /* ------------------- Images ------------------ */
-
 const minifyImages = () => {
+  return src(path.src.img)
+    .pipe(plumber())
+    .pipe(image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: true,
+      jpegRecompress: false,
+      mozjpeg: true,
+      gifsicle: true,
+      svgo: true,
+      concurrent: 10,
+      quiet: true // defaults to false
+    }))
+    .pipe(dest(path.build.img))
+    .pipe(browsersync.stream());
+};
+
+const minifyImagesOld = () => {
   return src(path.src.img)
     .pipe(plumber())
     .pipe(dest(path.build.img))
@@ -303,7 +323,8 @@ const employer = gulp.parallel(clean, css, js, html, minifyImages);
 // for 1 time execute
 const minifyAll = gulp.parallel(minifyCss, minifyJs, minifyImages);
 exports.minifyAll = minifyAll;
-exports.images = minifyImages;
+exports.imagesOld = minifyImagesOld;
+exports.images = minifyImages
 exports.fonts = fonts;
 exports.otf2ttf = otf2ttf;
 exports.fontConnect2File = fontConnect2File;
