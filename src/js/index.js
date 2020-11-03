@@ -3,6 +3,7 @@ import regeneratorRuntime from "regenerator-runtime";
 
 import MenuHandler from './MenuHandler';
 import Ibg from './Ibg';
+import Slider from './Slider';
 
 (function () {
     // window.addEventListener("load", ready());
@@ -20,6 +21,12 @@ import Ibg from './Ibg';
 
         // Handle header menu clicks
         MenuHandler(menuClass, menuBtnClass, userMenuClass , userMenuBtnClass);
-    
+
+
+        // Elems for slider 
+        const elems = '.main-slider__body',
+        btnParent = '.control-main-slider__arrow_prev , .control-main-slider__arrow_next';
+
+        Slider(elems, btnParent);
     };
 }());

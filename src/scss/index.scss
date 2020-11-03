@@ -49,8 +49,8 @@ body {
 }
 
 /*-------------------- include Sections ----------------------*/
-@import 'header.scss';
-@import 'mainSlider.scss';
+@import "header.scss";
+@import "mainSlider.scss";
 
 /*-------------------- Common blocks ------------------------*/
 
@@ -86,7 +86,7 @@ img {
 
     &:before,
     &:after {
-        content:'';
+        content: "";
         position: absolute;
         height: 3px;
         width: 100%;
@@ -102,14 +102,9 @@ img {
     }
     // .btn__body
     &__body {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 50px;
-
         &:before,
         &:after {
-            content:'';
+            content: "";
             position: absolute;
             top: 0;
             height: 100%;
@@ -125,11 +120,13 @@ img {
 
         span {
             position: relative;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
             padding: 0 50px;
-            &:before,
             &:after {
-                content:'';
+                content: "";
                 position: absolute;
                 width: 100%;
                 height: 50%;
@@ -137,15 +134,22 @@ img {
                 left: 0;
                 background-image: linear-gradient(to top, #bb9c66 0%, rgba(187, 156, 102, 0) 100%);
                 opacity: 0.06;
+                transition: all 0.5s ease 0s;
             }
         }
     }
+    // Btn hover, only pc
     @media (min-width: 992px) {
         &:hover {
+            .btn__body span {
+                &:after {
+                    height: 100%;
+                    opacity: 0.6;
+                }
+            }
         }
     }
 }
-
 
 .title {
     text-align: center;
@@ -174,6 +178,8 @@ img {
         &_fw_normal {
             font-weight: normal;
         }
+        @media (max-width: $md3) {
+            font-size: 28px;
+        }
     }
-
 }
