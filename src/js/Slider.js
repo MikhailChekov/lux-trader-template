@@ -1,6 +1,6 @@
 /**
  * Usage: simpleSlider(elems, btnContainer)
- * elems - string, define container with elems;
+ * elems - string, className define container with elems;
  * btns - string with 2 classes separated by ',';
 */
 export default function Slider(elems, btns) {
@@ -20,6 +20,7 @@ export default function Slider(elems, btns) {
         }
     }
     // do the same height to all elems for prevent slider container deformation
+    // only for screen > 768px;
     setMaxHeight();
    
     //prev
@@ -45,11 +46,13 @@ export default function Slider(elems, btns) {
             elems[prevPos].style.display = "none";
         }
     }
-    //TODO: check offset
+
     function setMaxHeight () {
-        maxHeight = Math.max(...heightCont);
-        for(const elem of elems) {
-            elem.style.height = maxHeight+'px';
+        if(document.documentElement.clientWidth > 768){
+            maxHeight = Math.max(...heightCont);
+            for(const elem of elems) {
+                elem.style.height = maxHeight+'px';
+            }     
         }
     }
 }

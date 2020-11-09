@@ -1,0 +1,76 @@
+.lots {
+    // .lots__container
+    &__container {
+        padding-top: 85px;
+        padding-bottom: 63px;
+    }
+
+    // .lots__header
+    &__header {
+        margin: 0px 0px 40px 0px;
+    }
+
+    // .lots__slider
+    &__slider {
+    }
+}
+
+.slider-lots {
+    // .slider-lots__body
+    &__body {
+    }
+
+    // .slider-lots__slide
+    &__slide {
+    }
+
+    // .slider-lots__control
+    &__control {
+    }
+}
+.control-slider-lots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // .control-slider-lots__arrow
+    &__arrow {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        // .control-slider-lots__arrow_r
+        &_r {
+            transform: rotate(180deg);
+        }
+
+        span{
+            width: 108px;
+            height: 35px;
+            flex: 0 0 108px;
+            background: url(../img/lots/sl-arrow.png) 0 0 no-repeat;
+        }
+        &::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border: 1px solid #bb9c66;
+            border-radius: 50%;
+            margin: 0px 0px 0px 5px;
+        }
+    }
+
+    // .control-slider-lots__link
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 100px;
+        height: 100px;
+        background: url(../img/lots/round.png) 0 0 no-repeat;
+        margin: 0 25px;
+        color: #000000;
+        font-family: "PF Din Text Cond Pro";
+        font-size: 21px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}

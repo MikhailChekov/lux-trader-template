@@ -23,10 +23,9 @@ import Slider from './Slider';
         MenuHandler(menuClass, menuBtnClass, userMenuClass , userMenuBtnClass);
 
 
-        // Elems for slider 
+        // MainSlider scripts
         const elems = '.main-slider__body',
         btnParent = '.control-main-slider__arrow_prev , .control-main-slider__arrow_next';
-
         Slider(elems, btnParent);
     };
 }());

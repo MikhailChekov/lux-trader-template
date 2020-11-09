@@ -45,19 +45,16 @@ body {
 .container {
     max-width: $mw;
     margin: 0 auto;
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /*-------------------- include Sections ----------------------*/
 @import "header.scss";
 @import "mainSlider.scss";
+@import "lots.scss";
 
-/*-------------------- Common blocks ------------------------*/
-
-img {
-    width: 100%;
-    height: auto;
-}
+/*---------------------------------- COMMON ELEMENTS -----------------------------------*/
 
 .ibg {
     background-repeat: no-repeat;
@@ -150,7 +147,7 @@ img {
         }
     }
 }
-
+/* ---------------------- COMMON BLOCKS -------------------------- */
 .title {
     text-align: center;
     // .title__start
@@ -180,6 +177,87 @@ img {
         }
         @media (max-width: $md3) {
             font-size: 28px;
+        }
+    }
+}
+/* ------------------------------------------------------- */
+.block-header {
+    // .block-header__title
+    &__title {
+        margin: 0px 0px 20px 0px;
+    }
+
+    // .block-header__decor
+
+    &__decor {
+    }
+}
+
+.block-decor {
+    display: flex;
+    align-items: center;
+
+    // .block-decor__items
+    &__items {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        // Line
+        &:before {
+            content: "";
+            height: 1px;
+            flex: 1;
+            width: 100%;
+            background-color: #bb9c66;
+        }
+        //square
+        &:after {
+            content: "";
+            height: 25px * 0.72;
+            flex: 0 0 25px * 0.72;
+            border: 1px solid #bb9c66;
+            transform: rotate(-45deg);
+            margin: 0 5px;
+        }
+        span {
+            display: flex;
+            align-items: center;
+            margin: 0 5px;
+            //round
+            &:before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                flex: 0 0 10px;
+                border-radius: 50%;
+                border: 1px solid #bb9c66;
+            }
+            //square
+            &:after {
+                content: "";
+                width: 15px * 0.72;
+                height: 15px * 0.72;
+                border: 1px solid #bb9c66;
+                transform: rotate(-45deg);
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+    // .block-decor__items_r   rotate for decor
+    &__items_r {
+        transform: rotate(180deg);
+    }
+
+    // .block-decor__icon
+
+    &__icon {
+        flex: 0 0 145px;
+        text-align: center;
+        @media (max-width: $md3) {
+            flex: 0 0 95px;
+        }
+        img {
+            min-width: 70px;
         }
     }
 }
