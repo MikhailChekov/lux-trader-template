@@ -81,6 +81,14 @@ body {
     text-transform: uppercase;
     letter-spacing: 1.5px;
 
+    &_text-b {
+        color: #000000;
+        font-family: "PF Din Text Cond Pro";
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 25px;
+    }
+
     &:before,
     &:after {
         content: "";
@@ -257,7 +265,7 @@ body {
             flex: 0 0 95px;
         }
         img {
-            min-width: 70px;
+            max-width: 70px;
         }
     }
 }
