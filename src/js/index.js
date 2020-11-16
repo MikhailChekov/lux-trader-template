@@ -3,7 +3,8 @@ import regeneratorRuntime from "regenerator-runtime";
 
 import MenuHandler from './MenuHandler';
 import Ibg from './Ibg';
-import Slider from './Slider';
+import SliderOne from './SliderOne';
+import MultySlider from './MultySlider';
 
 (function () {
     // window.addEventListener("load", ready());
@@ -23,9 +24,16 @@ import Slider from './Slider';
         MenuHandler(menuClass, menuBtnClass, userMenuClass , userMenuBtnClass);
 
 
-        // MainSlider scripts
-        const elems = '.main-slider__body',
-        btnParent = '.control-main-slider__arrow_prev , .control-main-slider__arrow_next';
-        Slider(elems, btnParent);
+        // Slider for 'Mainslider' section
+        const mainSliderElems = '.main-slider__body',
+        mainSliderBtns = '.control-main-slider__arrow_prev , .control-main-slider__arrow_next';
+        SliderOne(mainSliderElems, mainSliderBtns);
+
+
+        // Slider for 'lots' section
+        const lotsSliderElems = '.slider-lots__body',
+        lotsSliderBtns = '.control-slider-lots__arrow_l , .control-slider-lots__arrow_r',
+        lotsSliderCounts = 3;
+        MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderCounts);
     };
 }());

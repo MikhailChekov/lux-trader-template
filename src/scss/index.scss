@@ -87,6 +87,11 @@ body {
         font-size: 21px;
         font-weight: 500;
         line-height: 25px;
+        .btn__body {
+            span {
+                padding: 0 25px;
+            }
+        }
     }
 
     &:before,

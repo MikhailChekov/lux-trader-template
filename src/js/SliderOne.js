@@ -1,9 +1,9 @@
 /**
- * Usage: simpleSlider(elems, btnContainer)
+ * Usage: SliderOne(elems, btnContainer)
  * elems - string, className define container with elems;
  * btns - string with 2 classes separated by ',';
 */
-export default function Slider(elems, btns) {
+export default function SliderOne(elems, btns) {
     elems = document.querySelectorAll(elems)[0].children,
     btns = document.querySelectorAll(btns);
 
