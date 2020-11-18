@@ -120,6 +120,7 @@
     }
     // .lot__btn
     &__btn {
+        margin: 0 25px;
     }
 }
 
@@ -177,6 +178,12 @@
 
     // .info-lot__stats
     &__stats {
+        flex: 0 0 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid #bb9c66;
     }
 
     // .info-lot__price
@@ -185,50 +192,83 @@
 
     // .info-lot__icon
     &__icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px * 0.72;
+        height: 25px * 0.72;
+        margin: 0px 0px 10px 0px;
+        img {
+            position: relative;
+            z-index: 2;
+        }
+        &:after {
+            content:'';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-45deg);
+            background-color: #000;
+        }
     }
     // .info-lot__value
     &__value {
+        font-size: 14px;
+        color: #000;
+        // line-height: 25px;
     }
     
 }
 
 .price-lot {
+    position: relative;
     text-align: center;
+
+    
+
     // .price-lot__label
     &__label {
         color: #000;
         font-size: 14px;
         font-weight: 400;
         line-height: 25px;
+        margin: 0px 0px 13px 0px;
     }
 
     // .price-lot__value
     &__value {
         position: relative;
         color: #1c242a;
-        font-family: "Bravo RG";
+        font-family: "BravoRG";
         font-size: 50px;
         font-weight: 400;
         line-height: 21px;
-
+        margin: 0px 5px 13px 5px;
         &:after {
             content:'';
             position: absolute;
-            top: 0;
-            // bottom: 0;
-            // right: 0;
+            top: 50%;
             left: 50%;
-            margin-left: -50%;
+            transform: translate(-50%, -50%) rotate(45deg);
             width: 72px;
             height: 72px;
-            transform: rotate(45deg);
             border: 1px solid #bb9c66;
+            z-index: -1;
         }
+        
     }
 
     // .price-lot__currency
     &__currency {
         font-family: "ALS Rubl";
         font-size: 14px;
+        line-height: 21px;
+    }
+
+    // above all divs under the decor
+    div {
+        position: relative;
+        z-index: 2;
     }
 }

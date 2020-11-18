@@ -32,8 +32,27 @@ import MultySlider from './MultySlider';
 
         // Slider for 'lots' section
         const lotsSliderElems = '.slider-lots__body',
-        lotsSliderBtns = '.control-slider-lots__arrow_l , .control-slider-lots__arrow_r',
-        lotsSliderCounts = 3;
-        MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderCounts);
+        lotsSliderBtns = '.control-slider-lots__arrow_l , .control-slider-lots__arrow_r';
+
+        StartSlider();
+
+        window.addEventListener('resize', () => {
+            StartSlider();   
+        });
+        
+        function StartSlider() {
+            let clWidth = document.documentElement.clientWidth,
+            lotsSliderCounts = 3;
+            if(clWidth < 970 && clWidth > 479) {
+                lotsSliderCounts = 2;
+                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderCounts);
+            } else if (clWidth <= 478) {
+                lotsSliderCounts = 1;
+                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderCounts);
+            } else {
+                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderCounts);
+            }
+        }
+
     };
 }());
