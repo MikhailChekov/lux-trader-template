@@ -19,9 +19,15 @@ export default function SliderOne(elems, btns) {
             elems[i].style.display = "none";
         }
     }
-    // do the same height to all elems for prevent slider container deformation
-    // only for screen > 768px;
-    setMaxHeight();
+
+    /*
+        Sacrificing function for adaptive
+
+        do the same height to all elems for prevent slider container deformation
+        only for screen > 768px;
+    */
+
+    // setMaxHeight();
    
     //prev
     btns[0].addEventListener('click', () => {
@@ -48,11 +54,11 @@ export default function SliderOne(elems, btns) {
     }
 
     function setMaxHeight () {
-        if(document.documentElement.clientWidth > 768){
+        // if(document.documentElement.clientWidth > 768){
             maxHeight = Math.max(...heightCont);
             for(const elem of elems) {
                 elem.style.height = maxHeight+'px';
             }     
-        }
+        // }
     }
 }

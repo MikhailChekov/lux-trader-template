@@ -24,33 +24,35 @@ import MultySlider from './MultySlider';
         MenuHandler(menuClass, menuBtnClass, userMenuClass , userMenuBtnClass);
 
 
+        /*--------------------------- Sliders --------------------------------*/
+
         // Slider for 'Mainslider' section
         const mainSliderElems = '.main-slider__body',
         mainSliderBtns = '.control-main-slider__arrow_prev , .control-main-slider__arrow_next';
         SliderOne(mainSliderElems, mainSliderBtns);
 
-
         // Slider for 'lots' section
         const lotsSliderElems = '.slider-lots__body',
         lotsSliderBtns = '.control-slider-lots__arrow_l , .control-slider-lots__arrow_r';
 
-        StartSlider();
-
-        window.addEventListener('resize', () => {
-            StartSlider();   
-        });
+        StartLotsSlider();
         
-        function StartSlider() {
+        // if user change screen resolution, we are restarting slider for adaptive
+        window.addEventListener('resize', () => {
+            StartLotsSlider();
+        });
+    
+        function StartLotsSlider() {
             let clWidth = document.documentElement.clientWidth,
-            lotsSliderCounts = 3;
-            if(clWidth < 970 && clWidth > 479) {
-                lotsSliderCounts = 2;
-                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderCounts);
-            } else if (clWidth <= 478) {
-                lotsSliderCounts = 1;
-                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderCounts);
+            lotsSliderPerView = 3;
+            if(clWidth < 850 && clWidth > 551) {
+                lotsSliderPerView = 2;
+                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderPerView);
+            } else if (clWidth <= 550) {
+                lotsSliderPerView = 1;
+                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderPerView);
             } else {
-                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderCounts);
+                MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderPerView);
             }
         }
 
