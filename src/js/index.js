@@ -5,6 +5,7 @@ import MenuHandler from './MenuHandler';
 import Ibg from './Ibg';
 import SliderOne from './SliderOne';
 import MultySlider from './MultySlider';
+import TimerCountdown from './TimerCountdown';
 
 (function () {
     // window.addEventListener("load", ready());
@@ -14,6 +15,8 @@ import MultySlider from './MultySlider';
 
         //Copy 'src' from img tag to background of a parent tag.
         Ibg();
+
+        /*--------------------------- Header menu --------------------------------*/
 
         const userMenuBtnClass = '.user-header__icon', 
             userMenuClass = '.user-header__menu',
@@ -55,6 +58,11 @@ import MultySlider from './MultySlider';
                 MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderPerView);
             }
         }
+
+        /*--------------------------- Timercountdown --------------------------------*/
+
+
+        TimerCountdown(true, '.timer-lot__item', 3, 21, 45, 37);
 
     };
 }());
