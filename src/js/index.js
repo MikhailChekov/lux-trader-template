@@ -5,7 +5,7 @@ import MenuHandler from './MenuHandler';
 import Ibg from './Ibg';
 import SliderOne from './SliderOne';
 import MultySlider from './MultySlider';
-import TimerCountdown from './TimerCountdown';
+import StaticTimer from './StaticTimer';
 
 (function () {
     // window.addEventListener("load", ready());
@@ -59,10 +59,10 @@ import TimerCountdown from './TimerCountdown';
             }
         }
 
-        /*--------------------------- Timercountdown --------------------------------*/
+        /*--------------------------- Lots timer --------------------------------*/
 
-
-        TimerCountdown(true, '.timer-lot__item', 3, 21, 45, 37);
+        const timerElems = '.timer-lot__item';
+        StaticTimer(true, timerElems, 3, 21, 45, 37);
 
     };
 }());
