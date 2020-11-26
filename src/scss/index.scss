@@ -54,8 +54,7 @@ body {
 @import "mainSlider.scss";
 @import "lots.scss";
 @import "categories.scss";
-
-
+@import "services.scss";
 /*---------------------------------- COMMON ELEMENTS -----------------------------------*/
 
 .ibg {
@@ -164,7 +163,7 @@ body {
         }
     }
 }
-/* ---------------------- COMMON BLOCKS -------------------------- */
+
 .title {
     text-align: center;
     // .title__start
@@ -197,7 +196,7 @@ body {
         }
     }
 }
-/* ------------------------------------------------------- */
+
 .block-header {
     // .block-header__title
     &__title {
