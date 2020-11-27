@@ -1,0 +1,187 @@
+.quotes {
+    padding: 65px 0px 75px 0px;
+    // .quotes__container
+    &__container {
+    }
+
+    // .quotes__header
+    &__header {
+        @media (max-width: 520px) {
+            margin: 0px 0px 30px 0px;
+        }
+    }
+
+    // .quotes__slider
+    &__slider {
+    }
+}
+
+.slider-quotes {
+    // .slider-quotes__container
+    &__container {
+    }
+
+    // .slider-quotes__slide
+    &__slide {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        animation: slowFade 2s linear;
+    }
+
+    @keyframes slowFade {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    // .slider-quotes__image
+    &__image {
+        flex: 0 0 320px/950px * 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        img{ 
+            max-width: 100%;
+        }
+        @media (max-width: 520px) {
+            flex: 0 1 100%;
+            img{ 
+                max-width: 50%;
+            }
+        }
+
+    }
+
+    // .slider-quotes__content
+    &__content {
+        flex: 0 1 515px;
+        @media (max-width: 520px) {
+            flex: 1 1 100%;
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
+    // .slider-quotes__title
+    &__title {
+        color: #000;
+        font-size: 25px;
+        font-style: italic;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+        line-height: 30px;
+        margin: 0px 0px 32px/25px * 1em 0px;
+
+        @media (max-width: 769px) {
+            font-size: 22px;
+        }
+        @media (max-width: 580px) {
+            font-size: 19px;
+        }
+        @media (max-width: 520px) {
+            text-align: center;
+        }
+    }
+
+    // .slider-quotes__info
+    &__info {
+        color: #1c242a;
+        font-size: 15px;
+        font-weight: 400;
+        p {
+            margin: 0px 0px 10px 0px;
+            &:last-child {
+                margin: 0;
+            }
+            
+        }
+        @media (max-width: 580px) {
+            font-size: 14px;
+            p {
+                margin: 0px 0px 5px 0px;
+            }
+        }
+        @media (max-width: 580px) {
+            font-size: 15px;
+            p {
+                text-align: center;
+            }
+        }
+    }
+
+    // .slider-quotes__control
+    &__control {
+    }
+}
+.control-slider-quotes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+
+    // .control-slider-quotes__decor
+    &__decor {
+        flex: 0 1 33.333%;
+        display: flex;
+        align-items: center;
+        
+
+        &:before {
+            content:'';
+            flex: 1 1 auto;
+            height: 1px;
+            background-color: #bb9c66;
+            margin: 0px 5px 0px 0px;
+        }
+        
+        &:after {
+            content:'';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #bb9c66;
+        }
+    }
+    // rotate decor element
+    &__decor_r {
+        transform: rotate(180deg);
+    }
+
+    // .control-slider-quotes__btn
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex: 0 1 33.333%;
+    }
+
+    // .control-slider-quotes__circle
+    &__circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #bb9c66;
+        background: url('../img/quotes/circle-arrow.png') center no-repeat;
+        transition: all 2s ease;
+
+        &_rotate {
+            animation: rotate 1s linear;
+        }
+    }
+    
+    @keyframes rotate {
+        0% {
+            
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

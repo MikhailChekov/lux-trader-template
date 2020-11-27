@@ -34,6 +34,7 @@ import StaticTimer from './StaticTimer';
         mainSliderBtns = '.control-main-slider__arrow_prev , .control-main-slider__arrow_next';
         SliderOne(mainSliderElems, mainSliderBtns);
 
+
         // Slider for 'lots' section
         const lotsSliderElems = '.slider-lots__body',
         lotsSliderBtns = '.control-slider-lots__arrow_l , .control-slider-lots__arrow_r';
@@ -58,6 +59,14 @@ import StaticTimer from './StaticTimer';
                 MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderPerView);
             }
         }
+
+        // Slider for 'quotes' section
+        const quotesSliderElems = '.slider-quotes__container',
+            quotesSliderBtn = '.control-slider-quotes__btn',
+            quotesSliderAnimElem = '.control-slider-quotes__circle',
+            quotesSliderAnimClass = 'control-slider-quotes__circle_rotate';
+
+        SliderOne(quotesSliderElems, quotesSliderBtn, true, quotesSliderAnimElem, quotesSliderAnimClass, 1000, 'flex');
 
         /*--------------------------- Lots timer --------------------------------*/
 
