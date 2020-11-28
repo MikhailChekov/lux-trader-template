@@ -24,9 +24,11 @@
     // .slider-quotes__slide
     &__slide {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         animation: slowFade 2s linear;
+        @media (max-width: 520px) {
+            flex-wrap: wrap;
+        }
     }
 
     @keyframes slowFade {
@@ -78,11 +80,9 @@
         margin: 0px 0px 32px/25px * 1em 0px;
 
         @media (max-width: 769px) {
-            font-size: 22px;
-        }
-        @media (max-width: 580px) {
             font-size: 19px;
         }
+
         @media (max-width: 520px) {
             text-align: center;
         }
@@ -101,14 +101,9 @@
             
         }
         @media (max-width: 580px) {
-            font-size: 14px;
-            p {
-                margin: 0px 0px 5px 0px;
-            }
-        }
-        @media (max-width: 580px) {
             font-size: 15px;
             p {
+                margin: 0px 0px 5px 0px;
                 text-align: center;
             }
         }
@@ -131,7 +126,6 @@
         display: flex;
         align-items: center;
         
-
         &:before {
             content:'';
             flex: 1 1 auto;
