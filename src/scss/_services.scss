@@ -29,6 +29,9 @@
     // .services__header
     &__header {
         margin: 0px 0px 40px 0px;
+        @media (max-width: 480px) {
+            margin: 0px 0px 20px 0px;
+        }
     }
 
     // .services__item
@@ -48,6 +51,9 @@
         justify-content: center;
         height: 205px;
         margin: 0px 0px 40px 0px;
+        @media (max-width: 480px) {
+            margin: 0px 0px 20px 0px;
+        }
     }
 
     // .item-service__title

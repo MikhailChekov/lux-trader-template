@@ -1,5 +1,9 @@
 .categories {
     margin: 0px 0px 70px 0px;
+    @media (max-width: 767px) {
+        margin: 0px 0px 30px 0px;   
+    }
+    
     // .categories__container
     &__container {
         position: relative;
@@ -16,6 +20,12 @@
     // .categories__items
     &__items {
         margin: 0px 0px 85px 0px;
+        @media (max-width: 767px) {
+            margin: 0px 0px 30px 0px;   
+        }
+        @media (max-width: 480px) {
+            margin: 0;   
+        }
     }
     // .categories__row
     &__row {
