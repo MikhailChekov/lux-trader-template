@@ -1,8 +1,8 @@
 {
-  "name": "portfolio",
+  "name": "lux-trader-template",
   "homepage": "http://MikhailChekov.github.io/lux-trader-template/",
-  "version": "2.0.0",
-  "description": "Portfolio 2.0",
+  "version": "1.0.0",
+  "description": "Lux trader template",
   "main": "index.hmtl",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -245,6 +245,7 @@
         top: 0;
         left: 0;
         transition: all 0.8s linear 0s;
+        background-size: cover;
         &:after {
             content: "";
             position: absolute;
@@ -254,6 +255,15 @@
             left: 0;
             background-color: rgba(0, 0, 0, 0.7);
         }
+        &_1 { background: url(../img/categories/Layer_56.png) center no-repeat; }
+        &_2 { background: url(../img/categories/Layer_57.png) center no-repeat; }
+        &_3 { background: url(../img/categories/Layer_58.png) center no-repeat; }
+        &_4 { background: url(../img/categories/Layer_59.png) center no-repeat; }
+        &_5 { background: url(../img/categories/Layer_60.png) center no-repeat; }
+        &_6 { background: url(../img/categories/Layer_61.png) center no-repeat; }
+        &_7 { background: url(../img/categories/Layer_62.png) center no-repeat; }
+        &_8 { background: url(../img/categories/Layer_63.png) center no-repeat; }
+        &_9 { background: url(../img/categories/Layer_64.png) center no-repeat; }
     }
 }
 
@@ -290,7 +300,6 @@
             background: #fff;
             padding: 10px 0px 25px 0px;
             &:before {
-                // content: "";
                 display: none;
             }
         }
