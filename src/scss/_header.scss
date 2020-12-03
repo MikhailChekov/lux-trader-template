@@ -1,5 +1,8 @@
 .header {
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     z-index: 5;
     background-color: #1c242a;
     // .header__container
@@ -106,6 +109,10 @@
         }
         @media (max-width: $md3) {
             font-size: 24px;
+        }
+        
+        &_active {
+            color: #bb9c66;
         }
     }
 }

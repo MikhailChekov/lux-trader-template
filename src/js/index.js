@@ -6,6 +6,9 @@ import Ibg from './Ibg';
 import SliderOne from './SliderOne';
 import MultySlider from './MultySlider';
 import StaticTimer from './StaticTimer';
+import ActiveOnScroll from './ActiveOnScroll';
+
+
 
 (function () {
     // window.addEventListener("load", ready());
@@ -21,10 +24,26 @@ import StaticTimer from './StaticTimer';
         const userMenuBtnClass = '.user-header__icon', 
             userMenuClass = '.user-header__menu',
             menuBtnClass = '.icon-menu',
-            menuClass = '.menu__body';
+            menuClass = '.menu__body',
+            headerMenuLinks = '.menu__link',
+            offset = 75;
 
         // Handle header menu clicks
-        MenuHandler(menuClass, menuBtnClass, userMenuClass , userMenuBtnClass);
+        MenuHandler(menuClass, menuBtnClass, userMenuClass , userMenuBtnClass, headerMenuLinks, offset);
+
+
+        // Add active class to header menu items 
+        
+        const pageSections = 'main > *[id]',
+            linkElems = '.menu__link';
+            
+        ActiveOnScroll(pageSections, linkElems);
+
+
+        /*--------------------------- Lots timer --------------------------------*/
+
+        const timerElems = '.timer-lot__item';
+        StaticTimer(true, timerElems, 3, 21, 45, 37);
 
 
         /*--------------------------- Sliders --------------------------------*/
@@ -67,11 +86,6 @@ import StaticTimer from './StaticTimer';
             quotesSliderAnimClass = 'control-slider-quotes__circle_rotate';
 
         SliderOne(quotesSliderElems, quotesSliderBtn, true, quotesSliderAnimElem, quotesSliderAnimClass, 1000, 'flex');
-
-        /*--------------------------- Lots timer --------------------------------*/
-
-        const timerElems = '.timer-lot__item';
-        StaticTimer(true, timerElems, 3, 21, 45, 37);
 
     };
 }());
