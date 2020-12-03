@@ -1,5 +1,5 @@
 /**
- * Usage: StaticTimer(flag, item, days, hours, min, sec)
+ * *Usage: StaticTimer(flag, item, days, hours, min, sec)
  * flag - boolean, if true create more than 1 item.
  * item - string className, you can pass 1 or more elems separated by ','.
  * days, hours, min, sec - number, required elements.
@@ -27,11 +27,11 @@ export default function StaticTimer(flag, item, days, hours, min, sec) {
 
         let daysN = Math.floor(time / (24 * 3600)),
             daysS = daysN * 24 * 3600,
-            hoursN = Math.floor((time - daysS)/3600),
+            hoursN = Math.floor((time - daysS) / 3600),
             hoursS = hoursN * 3600,
-            minN = Math.floor((time - (daysS + hoursS))/60),
+            minN = Math.floor((time - (daysS + hoursS)) / 60),
             minS = minN * 60,
-            secN = Math.floor(time - (daysS + hoursS + minS));        
+            secN = Math.floor(time - (daysS + hoursS + minS));
 
 
         if (elems.length) {
@@ -43,7 +43,7 @@ export default function StaticTimer(flag, item, days, hours, min, sec) {
         }
         time--;
 
-        if(time <= 0) {
+        if (time <= 0) {
             clearInterval(timer);
         }
     }

@@ -21,7 +21,7 @@ import ActiveOnScroll from './ActiveOnScroll';
 
         /*--------------------------- Header menu --------------------------------*/
 
-        const userMenuBtnClass = '.user-header__icon', 
+        const userMenuBtnClass = '.user-header__icon',
             userMenuClass = '.user-header__menu',
             menuBtnClass = '.icon-menu',
             menuClass = '.menu__body',
@@ -29,14 +29,14 @@ import ActiveOnScroll from './ActiveOnScroll';
             offset = 75;
 
         // Handle header menu clicks
-        MenuHandler(menuClass, menuBtnClass, userMenuClass , userMenuBtnClass, headerMenuLinks, offset);
+        MenuHandler(menuClass, menuBtnClass, userMenuClass, userMenuBtnClass, headerMenuLinks, offset);
 
 
         // Add active class to header menu items 
-        
+
         const pageSections = 'main > *[id]',
             linkElems = '.menu__link';
-            
+
         ActiveOnScroll(pageSections, linkElems);
 
 
@@ -50,25 +50,25 @@ import ActiveOnScroll from './ActiveOnScroll';
 
         // Slider for 'Mainslider' section
         const mainSliderElems = '.main-slider__body',
-        mainSliderBtns = '.control-main-slider__arrow_prev , .control-main-slider__arrow_next';
+            mainSliderBtns = '.control-main-slider__arrow_prev , .control-main-slider__arrow_next';
         SliderOne(mainSliderElems, mainSliderBtns);
 
 
         // Slider for 'lots' section
         const lotsSliderElems = '.slider-lots__body',
-        lotsSliderBtns = '.control-slider-lots__arrow_l , .control-slider-lots__arrow_r';
+            lotsSliderBtns = '.control-slider-lots__arrow_l , .control-slider-lots__arrow_r';
 
         StartLotsSlider();
-        
+
         // if user change screen resolution, we are restarting slider for adaptive
         window.addEventListener('resize', () => {
             StartLotsSlider();
         });
-    
+
         function StartLotsSlider() {
             let clWidth = document.documentElement.clientWidth,
-            lotsSliderPerView = 3;
-            if(clWidth < 850 && clWidth > 551) {
+                lotsSliderPerView = 3;
+            if (clWidth < 850 && clWidth > 551) {
                 lotsSliderPerView = 2;
                 MultySlider(lotsSliderElems, lotsSliderBtns, lotsSliderPerView);
             } else if (clWidth <= 550) {

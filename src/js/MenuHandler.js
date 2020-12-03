@@ -7,10 +7,10 @@
 export default function MenuHandler(menuClass, menuBtnClass, userMenuClass, userMenuBtnClass, links, offset) {
 
     const userMenuBtn = document.querySelector(userMenuBtnClass),
-            userMenu = document.querySelector(userMenuClass),
-            menuBtn = document.querySelector(menuBtnClass),
-            menu = document.querySelector(menuClass);
-            
+        userMenu = document.querySelector(userMenuClass),
+        menuBtn = document.querySelector(menuBtnClass),
+        menu = document.querySelector(menuClass);
+
 
     let isMenuOpen = false,
         isUserMenuOpen = false;
@@ -35,18 +35,18 @@ export default function MenuHandler(menuClass, menuBtnClass, userMenuClass, user
 
     // close All menu after click to random document place.
     document.addEventListener('click', (e) => {
-        if(!isMenuOpen && !isUserMenuOpen) return;
+        if (!isMenuOpen && !isUserMenuOpen) return;
 
-        if(isUserMenuOpen && !e.target.closest(userMenuBtnClass)) {
+        if (isUserMenuOpen && !e.target.closest(userMenuBtnClass)) {
             userMenuToggler();
         }
-        if(isMenuOpen && !e.target.closest(menuBtnClass)) {
+        if (isMenuOpen && !e.target.closest(menuBtnClass)) {
             menuToggler();
         }
     })
 
     // handle links clicks and scrolling.
-    if(links) {
+    if (links) {
         links = [...document.querySelectorAll(links)];
         links.forEach(e => e.addEventListener('click', smoothScrollTo));
     }
@@ -56,7 +56,7 @@ export default function MenuHandler(menuClass, menuBtnClass, userMenuClass, user
         const elem = e.target.getAttribute('href');
         const section = document.querySelector(elem);
         const y = section.getBoundingClientRect().top + window.pageYOffset + (-offset);
-        window.scrollTo({top: y, behavior: 'smooth' });
+        window.scrollTo({ top: y, behavior: 'smooth' });
     }
 }
 

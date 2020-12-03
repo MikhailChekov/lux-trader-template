@@ -1,12 +1,14 @@
 /**
- * * Usage: ActiveOnScroll(pageElems, linkElems[, repeatAnim, BEMmode, classToElem])
+ * * Usage: ActiveOnScroll(pageElems, linkElems[, classToElem, BEMmode, offset])
  *  pageElems - string, Id selector for document.duerySelectorAll to section elements.
- *  navClass - string, Nav className for document.duerySelector for apply offset
- * classToElem  string   - class concatinate with element last class,
+ *  navClass - string, Nav className for document.duerySelector for apply offset.
+ * classToElem  string   - class concatinate with element last class, default name -  '_active'.
  * 
- *  BEMmode   booleand - if true, copy elem last class and concatinate with classToElem,
+ *  BEMmode booleand - if true, copy elem last class and concatinate with classToElem,
  *  looks like - elemLastClass + _active =>  elemLastClass_active
- * when elements showing user, default name -  '_active'
+ * when elements showing user
+ * 
+ *  Offset number, header height , default 75.
 */
 
 

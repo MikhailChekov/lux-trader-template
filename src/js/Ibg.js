@@ -8,7 +8,7 @@ export default function Ibg() {
             let imgSrc = item.children[0].attributes[0].value;
             item.style = `background-image: url("${imgSrc}");`;
         }
-    } else{
+    } else {
         console.log('No elements with class "ibg"!');
     }
 };

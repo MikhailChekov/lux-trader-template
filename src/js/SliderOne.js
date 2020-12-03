@@ -10,22 +10,22 @@
 */
 export default function SliderOne(elems, btns, animFlag, animElem, animClass, animTime = 1000, typeOfStyle = 'block') {
     elems = document.querySelectorAll(elems)[0].children,
-    btns = document.querySelectorAll(btns);
+        btns = document.querySelectorAll(btns);
 
-    if(animFlag) {
+    if (animFlag) {
         animElem = document.querySelector(animElem);
     }
 
     let position = 0,
-    prevPos = 0,
-    maxHeight = 0,
-    heightCont = [],
-    isAnimating = false;
+        prevPos = 0,
+        maxHeight = 0,
+        heightCont = [],
+        isAnimating = false;
 
     // hide extra elems
-    for(let i = 0; i < elems.length; i++){
+    for (let i = 0; i < elems.length; i++) {
         heightCont.push(elems[i].getBoundingClientRect().height);
-        if(i !== position){
+        if (i !== position) {
             elems[i].style.display = "none";
         }
     }
@@ -37,10 +37,10 @@ export default function SliderOne(elems, btns, animFlag, animElem, animClass, an
         only for screen > 768px;
     */
     // setMaxHeight();
-   
+
     //prev
     btns[0].addEventListener('click', () => {
-        if(isAnimating) return;
+        if (isAnimating) return;
 
         prevPos = position;
         position--;
@@ -48,37 +48,37 @@ export default function SliderOne(elems, btns, animFlag, animElem, animClass, an
         showElem(position, prevPos);
     });
 
-     //next (if more than 1 btn)
-     if(btns[1]){
+    //next (if more than 1 btn)
+    if (btns[1]) {
         btns[1].addEventListener('click', () => {
-            if(isAnimating) return;
-    
+            if (isAnimating) return;
+
             prevPos = position;
             position++;
-            position = position > (elems.length -1) ? 0 : position;
+            position = position > (elems.length - 1) ? 0 : position;
             showElem(position, prevPos);
         });
-     }
+    }
 
-    function showElem (pos, prevPos) {
+    function showElem(pos, prevPos) {
 
-        if(animFlag) {
+        if (animFlag) {
             animate();
         }
 
         elems[pos].style.display = typeOfStyle;
 
-        if(pos !== prevPos){
+        if (pos !== prevPos) {
             elems[prevPos].style.display = "none";
         }
     }
 
-    function setMaxHeight () {
+    function setMaxHeight() {
         // if(document.documentElement.clientWidth > 768){
-            maxHeight = Math.max(...heightCont);
-            for(const elem of elems) {
-                elem.style.height = maxHeight+'px';
-            }     
+        maxHeight = Math.max(...heightCont);
+        for (const elem of elems) {
+            elem.style.height = maxHeight + 'px';
+        }
         // }
     }
 
@@ -86,7 +86,7 @@ export default function SliderOne(elems, btns, animFlag, animElem, animClass, an
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    async function animate () {
+    async function animate() {
 
         isAnimating = true;
         console.log(animClass);

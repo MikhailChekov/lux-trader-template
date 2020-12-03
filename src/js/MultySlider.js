@@ -1,5 +1,5 @@
 /**
- * Usage: MultySlider(elems, btnContainer, count)
+ * *Usage: MultySlider(elems, btnContainer, count)
  * elems - string, className define container with elems;
  * btns - string with 2 classes separated by ',';
  * count - number elems, which we want show at once;
@@ -54,12 +54,12 @@ export default function MultySlider(elems, btns, count) {
         });
     }
 
-    function setMaxHeight () {
-        if(document.documentElement.clientWidth > 768){
+    function setMaxHeight() {
+        if (document.documentElement.clientWidth > 768) {
             maxHeight = Math.max(...heightCont);
-            for(const elem of elems) {
-                elem.style.height = maxHeight+'px';
-            }     
+            for (const elem of elems) {
+                elem.style.height = maxHeight + 'px';
+            }
         }
     }
 }
